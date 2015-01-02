@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>visual-formatting-model-9.1.2-containing-blocks</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/jquery-1.11.2.min.js"></script>
+</head>
+<body>
+
+
+<div class="m-part">
+
+    <h2 class="m-part-title"></h2>
+    <!-- 疑问 -->
+    <h3 class="question"></h3>
+
+    <!--规范上说 开始-->
+    <blockquote>
+
+    </blockquote>
+    <!--规范上说 结束-->
+
+    <!--实践过程 开始-->
+    <div class="doing">
+        <!--规范上说 开始-->
+        <blockquote>
+            规范说：A block container box either contains only block-level boxes or establishes an inline formatting context and thus contains only inline-level boxes
+        </blockquote>
+        <!--规范上说 结束-->
+        <!--步骤-->
+        <div class="step step1">
+            <div class="step-title">测试用例一：演示 Anonymous block boxes</div>
+            <div>
+                some text
+                <p>more text</p>
+            </div>
+
+            <img src="http://www.w3.org/TR/2011/REC-CSS2-20110607/images/anon-block.png" alt=""/>
+
+            <div class="step-conclusion">
+                也就是说：如果一个block container box里存在一个block-level box，那么我们就会强制block container box只包含block-level boxes
+            </div>
+        </div>
+        <!--步骤-->
+
+
+        <!--步骤-->
+        <div class="step step2">
+            <div class="step-title">测试用例二：inline box 包含 in-flow block-level box</div>
+            <style>
+                .step2 p{
+                    display: inline;
+                }
+                .step2 span{
+                    display: block;
+                }
+            </style>
+            <P>
+                This is anonymous text before the SPAN.
+                <span>This is the content of SPAN.</span>
+                This is anonymous text after the SPAN.
+            </P>
+
+
+            <div class="step-conclusion">
+                inline box(以及它的在同一个line box里的inline 祖先元素)会被打断，
+                围绕着block-level box(and any block-level siblings that are consecutive or separated only by collapsible whitespace and/or out-of-flow elements)。
+                inline box会被分割成两个盒子（即使任何一边为空），并分布在block-level box(es) 两侧，成为anonymous block boxes。
+
+            </div>
+
+        </div>
+        <!--步骤-->
+
+    </div>
+    <!--实践过程 结束-->
+
+</div>
+
+
+</body>
+</html>
