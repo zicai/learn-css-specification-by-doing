@@ -13,6 +13,17 @@ blockquote{
     border-bottom: 2px dashed deeppink;
 }
 
+.step-title{
+    margin-bottom: 20px;
+}
+
+.step-conclusion{
+    font-weight: bold;
+    padding: 10px;
+    background-color: #eee;
+    margin-top: 20px;
+}
+
 code{
 
 }
