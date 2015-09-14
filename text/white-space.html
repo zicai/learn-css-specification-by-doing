@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>white-space</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <script src="../js/jquery-1.11.2.min.js"></script>
+</head>
+<body>
+
+
+<div class="m-part">
+
+    <h2 class="m-part-title">white-space</h2>
+    <!-- 疑问 -->
+    <h3 class="question"></h3>
+
+    <!--规范上说 开始-->
+    <blockquote>
+
+    </blockquote>
+    <!--规范上说 结束-->
+
+    <!--实践过程 开始-->
+    <div class="doing">
+
+        <!--步骤-->
+        <div id="normal" class="step">
+            <code>
+                width: 100px;white-space:normal;
+            </code>
+            <div style="border: 1px solid blue;width: 100px;">
+                a bunch of words you see
+            </div>
+        </div>
+        <div id="nowrap" class="step">
+            <code>
+                width: 100px;white-space:nowrap;
+            </code>
+            <div style="border: 1px solid blue;width: 100px;white-space: nowrap;">
+                a bunch of words you see
+            </div>
+        </div>
+        <div id="pre" class="step">
+            <code>
+                width: 100px;white-space:pre;
+            </code>
+            <div style="border: 1px solid blue;width: 100px;white-space: pre;">
+                a bunch of words you see
+            </div>
+        </div>
+        <div id="pre-wrap" class="step">
+            <code>
+                width: 100px;white-space:pre-wrap;
+            </code>
+            <div style="border: 1px solid blue;width: 100px;white-space: pre-wrap;">
+                a bunch of words you see
+            </div>
+        </div>
+        <div id="pre-line" class="step">
+            <code>
+                width: 100px;white-space:pre-line;
+            </code>
+            <div style="border: 1px solid blue;width: 100px;white-space: pre-line;">
+                a bunch of words you see
+            </div>
+        </div>
+        <!--步骤-->
+
+    </div>
+    <!--实践过程 结束-->
+
+</div>
+
+
+</body>
+</html>
