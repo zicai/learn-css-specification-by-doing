@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>border-radius</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <script src="../js/jquery-1.11.2.min.js"></script>
+</head>
+<body>
+
+
+<div class="m-part">
+
+    <h2 class="m-part-title">border-radius</h2>
+    <!-- 疑问 -->
+    <h3 class="question"></h3>
+
+    <!--规范上说 开始-->
+    <blockquote>
+
+    </blockquote>
+    <!--规范上说 结束-->
+
+    <!--实践过程 开始-->
+    <div class="doing">
+
+        <!--步骤-->
+        <div id="normal" class="step">
+            <style>
+                #demo_1 {
+                    border: 5px solid blue;
+                    width: 100px;
+                    height: 100px;
+                }
+
+            </style>
+            <div class="w-controls">
+                border-top-left-radius：<input data-target="demo_1" data-target-prop="border-top-left-radius" type="range" min="0" max="100" value="50"/><br/>
+                border-top-right-radius：<input data-target="demo_1" data-target-prop="border-top-right-radius" type="range" min="0" max="100" value="50"/><br/>
+                border-bottom-right-radius：<input data-target="demo_1" data-target-prop="border-bottom-right-radius" type="range" min="0" max="100" value="50"/><br/>
+                border-bottom-left-radius：<input data-target="demo_1" data-target-prop="border-bottom-left-radius" type="range" min="0" max="100" value="50"/><br/>
+            </div>
+            <script>
+                $('.w-controls').on('change', 'input', function () {
+                    console.log('change');
+                    var value = $(this).val();
+                    var targetId = $(this).attr('data-target');
+                    var targetProp = $(this).attr('data-target-prop');
+                    console.log(value);
+                    console.log(targetProp);
+                    $('#' + targetId).css(targetProp, value + '%')
+                });
+            </script>
+
+            <div id="demo_1">
+
+            </div>
+        </div>
+        <!--步骤-->
+
+    </div>
+    <!--实践过程 结束-->
+
+</div>
+
+
+</body>
+</html>
